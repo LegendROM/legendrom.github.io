@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+## Welcome to LegendROM wiki
 
-You can use the [editor on GitHub](https://github.com/LegendROM/legendrom.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+You can use the following guide to build LegendROM for your devices. Please check the list of devices supported currently.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Setup
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Follow the given code block to setup the initial repo
 
-```markdown
-Syntax highlighted code block
+```
+#1. Make directory where we can start building and cd into it
+mkdir LegendROM && cd LegendROM
 
-# Header 1
-## Header 2
-### Header 3
+#2 Download the repo tool from google and give appropriate permissions to work
+curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /bin/repo && chmod +x repo/bin/
 
-- Bulleted
-- List
+#3 Initialise the manifest for SymphonyOS
+repo init -u https://github.com/LegendROM/manifest -b 11
 
-1. Numbered
-2. List
+#4 Download the source 
+repo sync -j16
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#6 Setup the build environment and start building for SymphonyClassroom
+source build/envsetup.sh
+lunch <device-name>-<build-type>
+make otapackage
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/LegendROM/legendrom.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Having trouble with building? Cantact us on pranavthombare97@gmail.com
